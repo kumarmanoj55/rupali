@@ -1,0 +1,145 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe0ec 0%, #f9c6d1 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.proposal-bg {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.proposal-container {
+    background: rgba(255,255,255,0.85);
+    border-radius: 32px;
+    box-shadow: 0 8px 40px rgba(255, 105, 180, 0.15);
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    text-align: center;
+    max-width: 420px;
+    z-index: 2;
+}
+
+.proposal-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #e75480;
+    margin-bottom: 1.2rem;
+}
+
+.proposal-message {
+    font-size: 1.2rem;
+    color: #b23a48;
+    margin-bottom: 2.2rem;
+    line-height: 1.7;
+}
+
+.proposal-question {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #e75480;
+    margin-top: 1.2rem;
+    font-family: 'Great Vibes', cursive;
+}
+
+.proposal-btn {
+    background: linear-gradient(90deg, #ffb6c1 0%, #e75480 100%);
+    color: #fff;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    padding: 0.9rem 2.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(231, 84, 128, 0.15);
+    transition: background 0.3s, transform 0.2s;
+    margin-bottom: 1.5rem;
+}
+
+.proposal-btn:hover {
+    background: linear-gradient(90deg, #e75480 0%, #ffb6c1 100%);
+    transform: scale(1.07);
+}
+
+.proposal-response {
+    font-size: 1.5rem;
+    color: #e75480;
+    font-family: 'Great Vibes', cursive;
+    margin-top: 1.5rem;
+    min-height: 2.5rem;
+}
+
+.proposal-name {
+    color: #b23a48;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    margin-left: 0.3em;
+    vertical-align: middle;
+}
+
+/* Floating hearts animation */
+.hearts {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.heart {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: url('data:image/svg+xml;utf8,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 29s-13-8.35-13-17A7 7 0 0 1 16 5a7 7 0 0 1 13 7c0 8.65-13 17-13 17z" fill="%23e75480"/></svg>') no-repeat center/contain;
+    opacity: 0.7;
+    animation: floatHearts 8s linear infinite;
+}
+@keyframes floatHearts {
+    0% {
+        transform: translateY(100vh) scale(0.7) rotate(-10deg);
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.1) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+/* Confetti styles (for canvas) */
+#confetti-canvas {
+    position: fixed;
+    pointer-events: none;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 9999;
+}
+
+@media (max-width: 600px) {
+    .proposal-container {
+        padding: 2rem 1rem 1.5rem 1rem;
+        max-width: 95vw;
+    }
+    .proposal-title {
+        font-size: 2rem;
+    }
+    .proposal-message {
+        font-size: 1rem;
+    }
+    .proposal-question {
+        font-size: 1.2rem;
+    }
+    .proposal-btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+} 
